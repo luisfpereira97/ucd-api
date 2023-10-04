@@ -1,0 +1,16 @@
+#%RAML 1.0
+title: ucd-template-api
+description: ucd-template-api
+version: 1.0.0
+
+/healthcheck:
+  get:
+    description: Health Check
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "status": "available"
+              }

@@ -1,0 +1,8 @@
+#
+# This is the environment specific properties file for PRE-PROD
+#
+api:
+  autoDiscoveryId: "12345678"
+
+http:
+  port: "8081"

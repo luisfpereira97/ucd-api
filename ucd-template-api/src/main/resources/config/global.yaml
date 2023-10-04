@@ -1,0 +1,10 @@
+#
+# Config file common between environments
+#
+http:
+  host: "0.0.0.0"
+  timeout: "30000"
+
+devOps:
+  appInsights:
+    appender: "![5tUkMQWvTNlHFtnQ0qtKBw==]"
