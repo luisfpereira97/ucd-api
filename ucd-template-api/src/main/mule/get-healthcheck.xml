@@ -13,9 +13,11 @@
 output application/json
 ---
 {
-  status: "available"
+  status: "available",
+  timestamp: now()
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<error-handler ref="Global_Error_Handler" />
 	</flow>
 </mule>

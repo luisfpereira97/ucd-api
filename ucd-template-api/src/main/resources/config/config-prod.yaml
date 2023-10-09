@@ -1,8 +1,14 @@
 #
 # This is the environment specific properties file for PROD
 #
-api:
-  autoDiscoveryId: "12345678"
-
 http:
+  host: "0.0.0.0"
   port: "8081"
+  timeout: "30000"
+
+devOps:
+  appInsights:
+    appender: "![5tUkMQWvTNlHFtnQ0qtKBw==]"
+    
+api:
+  autoDiscoveryId: "19015484"

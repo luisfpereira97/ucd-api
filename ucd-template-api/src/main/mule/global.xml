@@ -16,21 +16,19 @@
 
 	<apikit:config name="ucd-template-api-config" api="ucd-template-api.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     
-	<configuration-properties doc:name="Configuration properties" file="config\global.yaml" />
 	<configuration-properties doc:name="Configuration properties" file="config\config-${mule.env}.yaml" />
-	<secure-properties:config name="Secure_Properties_Config_Global" doc:name="Secure Properties Config" file="config\global.yaml" key="${secure.key}" />
 	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" file="config\config-${mule.env}.yaml" key="${secure.key}" />
 	
 	<http:listener-config name="HTTPS_Listener_config" doc:name="HTTP Listener config">
         <http:listener-connection host="${http.host}" port="${http.port}" readTimeout="${http.timeout}"/>
     </http:listener-config>
     
+	<api-gateway:autodiscovery apiId="${api.autoDiscoveryId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="d47524a9-d574-4938-b20c-91af9eff9352" flowRef="ucd-template-api-main" />
+	
 	<!-- Error Handler -->
 	<import doc:name="Import" doc:id="68943f03-1456-4867-96e9-6e769fd43671" file="errorhandler.xml" doc:description="errorhandler.xml"/>
 	
 	<!-- Common -->
 	<import doc:name="Import" doc:id="6de15d9d-69c7-47af-9d11-3f3b0757102d" file="ucd-common.xml" doc:description="ucd-common.xml" />
-	
-	<api-gateway:autodiscovery apiId="${api.autoDiscoveryId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="d47524a9-d574-4938-b20c-91af9eff9352" flowRef="ucd-template-api-main" />
 	
 </mule>
